@@ -1,0 +1,121 @@
+{{!< default}}
+
+{{!-- Home hero --}}
+{{#is "home"}}
+  {{>hero}}
+{{/is}}
+
+{{!-- Everything in a container --}}
+<div>
+  <div class="container wrapper">
+    <section class="section section-resources mantra-main-cta-section" id="resources">
+      {{!-- <div class="resources" data-filter-position="{{@custom.resources_filter_position}}" data-category="all"
+        data-filter-count="{{#get "tags" filter="slug:[{{@custom.resources_filter_slugs}}]"}}{{tags.length}}{{else}}0{{/get}}">
+        {{#match @custom.resources_filter_position "!=" "hidden"}}
+          {{> resources-filter}}
+        {{/match}}
+
+        <div class="resources-feed js-resources-feed" data-feed-layout="{{@custom.resources_feed_layout}}" data-not-found="{{t "No resources found"}}">
+          {{#foreach posts}}
+            {{> resource-card}}
+          {{/foreach}}
+        </div>
+      </div> --}}
+
+      <h1 class="mantra-title text-center">
+        What Inspires You Today?
+      </h1>
+
+      <div class="flex text-center">
+        <a href="/activities" class="mantra-box-cta">
+          <img src="/content/images/icons/icon-yoga.svg" alt="Yoga pose">
+          <p>I want to<br />book a class</p>
+          <button class="btn btn--brand">Explore Classes</button>
+        </a>
+        <a href="/accomodations" class="mantra-box-cta">
+          <img src="/content/images/icons/icon-sofa.svg" alt="Yoga pose">
+          <p>I want to<br />see accomodations</p>
+          <button class="btn btn--brand">Explore Accomodations</button>
+        </a>
+        <a href="/events" class="mantra-box-cta">
+          <img src="/content/images/icons/icon-cocktail.svg" alt="Yoga pose">
+          <p>I want to<br />see events</p>
+          <button class="btn btn--brand">Explore Events</button>
+        </a>
+        <a href="/host-a-retreat" class="mantra-box-cta">
+          <img src="/content/images/icons/icon-bungalow.svg" alt="Yoga pose">
+          <p>I want to<br />host a retreat</p>
+          <button class="btn btn--brand">Explore Retreat Hosting</button>
+        </a>
+      </div>
+      {{!-- Pagination --}}
+      {{> pagination type="load-more"}}
+    </section>
+
+    <section class="section mantra-vision-section text-center" id="vision">
+      <h1 class="mantra-title-alt">We have a vision of<br />holistic harmony.</h1>
+      <img class="mantra-vision-section__img-1" src="/content/images/vision-1.jpg" />
+      <img class="mantra-vision-section__img-2" src="/content/images/vision-2.jpg" />
+      <img class="mantra-vision-section__img-3" src="/content/images/vision-3.jpg" />
+      <img class="mantra-vision-section__vector-1" src="/content/images/vision-vector-1.svg" />
+      <img class="mantra-vision-section__vector-2" src="/content/images/vision-vector-2.svg" />
+      <p class="mantra-text">At Mantra Wellness Center, we redefine wellness. Our vision is to blend Bali's natural tranquility with holistic healing practices, creating a nurturing space for both personal growth and community connection.</p>
+    </section>
+
+    <section class="section mantra-vision-section text-center" id="vision">
+      <h1 class="mantra-title text-center">
+        Our Palette of Wellness Activities
+      </h1>
+      <div class="coming-soon"><p>coming soon</p></div>
+    </section>
+
+    {{!-- Blog section - rendered if the /blog/ page has the tag #home-blog --}}
+    {{!-- {{#get "posts" filter="tag:hash-blog" include="tags,authors,tiers" limit="3"}}
+      {{#if posts}}
+        <section class="section section-blog flex flex-wrap">
+          <h2 class="section-title m-b-0">{{t "Blog"}}</h2>
+          {{#link href="/blog/" class="btn--view m-l-sm"}}
+            <span class="m-r-sm">{{t "View all"}}</span> 
+            {{> icon name="arrow-right" size="14"}}
+          {{/link}}
+          <div class="grid post-feed m-t m-b-lg">
+            {{#foreach posts}}
+              {{> post-card}}
+            {{/foreach}}
+          </div>
+        </section>
+      {{/if}}
+    {{/get}} --}}
+
+  </div>
+
+  {{> host-retreat}}
+
+  <div class="container wrapper">
+    <section class="lead-section flex flex-container" id="vision">
+      <div class="section__container">
+        <img src="/content/images/magazine.jpg" />
+      </div>
+      <div class="section__container">
+        <div class="lead-section__content section__content">
+          <h1 class="mantra-title--alt">
+            Get Your Free Holistic<br />Wellness Guide
+          </h1>
+          <p class="mantra-text">
+            Dive into the world of holistic wellness with our exclusive brochure. Sign up with your email and receive a comprehensive guide to embracing a healthier, more balanced lifestyle.
+          </p>
+          <input class="mantra-input" type="text" placeholder="Enter your email" />
+          <button class="btn btn--brand">
+            <a href="/host-a-retreat">Download</a>
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+{{#is "home"}}
+  {{> contact}}
+  {{> quote}}
+{{/is}}
+
+</div>
